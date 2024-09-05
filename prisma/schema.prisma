@@ -13,8 +13,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model User {
   id String @id @default(uuid())
+  profile Profile?
   name String
   email String @unique
   passwordHash String @map("password_hash")
@@ -23,4 +25,27 @@ model User {
   updatedAt DateTime @updatedAt
 
   @@map("users")
+}
+
+model Profile {
+  id String @id @default(uuid())
+  bio String
+  user User @relation(fields: [userEmail], references: [id])
+  userEmail String @unique
+
+  @@map("profiles")
+}
+
+
+
+model Links {
+  id String @id @default(uuid())
+  title String
+  url String
+  description String
+  imageUrl String @map("image_url")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("links")
 }

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "db-preview": "npx run prisma studio",
     "start": "next start",
     "lint": "next lint"
   },

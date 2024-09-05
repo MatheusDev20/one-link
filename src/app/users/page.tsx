@@ -1,18 +1,17 @@
-import { Prisma } from "@prisma/client";
+
 import prisma from "../db";
 
 export default async function PostsPage() {
-  const data = await prisma.user.findMany()
-
+  const data = await fetch('http:localhost:3000/api/users')
   return (
     <div>
       <h1>Users</h1>
       <ul>
-        {data.map((user) => (
+        {/* {data.json().map((user) => (
           <li key={user.id}>
             {user.name} ({user.email})
           </li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );
