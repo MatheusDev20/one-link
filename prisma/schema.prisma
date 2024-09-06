@@ -36,8 +36,6 @@ model Profile {
   @@map("profiles")
 }
 
-
-
 model Links {
   id String @id @default(uuid())
   title String

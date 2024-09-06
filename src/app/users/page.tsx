@@ -1,8 +1,6 @@
-
-import prisma from "../db";
-
 export default async function PostsPage() {
-  const data = await fetch('http:localhost:3000/api/users')
+  // const data = await fetch('http:localhost:3000/api/users')
+
   return (
     <div>
       <h1>Users</h1>
@@ -14,5 +12,5 @@ export default async function PostsPage() {
         ))} */}
       </ul>
     </div>
-  );
+  )
 }
