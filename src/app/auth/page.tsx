@@ -6,7 +6,7 @@ export default function Auth() {
   return (
     <main className="flex min-h-screen flex-col lg:flex-row">
       {/* Form */}
-      <div className="flex min-w-full flex-col items-center bg-white p-0 lg:min-w-[50%]">
+      <div className="flex min-w-full flex-col bg-white p-0 lg:min-w-[50%]">
         <header className="flex max-h-16 w-full items-center gap-2 p-6">
           <Image src={OneLink} alt="One Link" className="h-[32px] w-[32px]" />
           <span className="text-sm font-bold lg:text-lg">OneLink</span>
@@ -14,7 +14,8 @@ export default function Auth() {
         <section className="mt-12 flex w-full flex-col items-center lg:mt-24">
           <div className="flex min-w-[70%] flex-col gap-4">
             <h3 className="text-md font-bold text-gray-700 lg:text-2xl">
-              Welcome Back to OneLink
+              Welcome Back to{' '}
+              <span className="text-customTheme-blue-dark">OneLink</span>
             </h3>
             <span className="text-gray-400">
               Please provide your credentials
@@ -28,7 +29,7 @@ export default function Auth() {
               <span className="text-gray-400">or</span>
               <hr className="h-px w-[50%] border-0 bg-gray-300" />
             </div>
-            <form className="mt-9 flex w-full max-w-sm flex-col gap-8">
+            <form className="mt-9 flex w-full max-w-sm flex-col gap-8 self-center">
               <div className="flex items-center border-b-2 border-gray-500 py-2 transition-all duration-300 ease-in-out focus-within:border-blue-500">
                 <input
                   className="mr-3 w-full appearance-none border-none bg-transparent px-2 py-1 leading-tight text-gray-500 focus:outline-none"
@@ -79,12 +80,12 @@ export default function Auth() {
       </div>
 
       {/* Carousel of Images */}
-      <div className="hidden items-center justify-center bg-gray-200 p-6 lg:flex lg:flex-1">
-        <div className="carousel h-full w-full max-w-full">
-          {/* Replace with actual carousel component */}
-          <p>Carousel of Images</p>
-        </div>
-      </div>
+      <div
+        className="hidden items-center justify-center border-l-[1.60px] bg-gray-200 bg-cover bg-no-repeat p-6 lg:flex lg:flex-1"
+        style={{
+          backgroundImage: `url(/one-link-auth.svg)`,
+        }}
+      ></div>
     </main>
   )
 }
